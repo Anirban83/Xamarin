@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TicTacToe.GamePage">
+
+    <Grid BackgroundColor="#127ac7" RowSpacing="10" VerticalOptions="StartAndExpand">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label 
+			Text="Welcome to the Game of TicTacToe"
+			TextColor="White"               
+			FontSize="20" 
+			FontAttributes="Bold"  
+			HorizontalOptions="CenterAndExpand" 
+            Padding="20, 40, 20, 20"
+            Grid.Row="0"
+            />
+        <Grid x:Name="gridGame" Padding="10, 10, 10, 10" ColumnSpacing="10" RowSpacing="10" Grid.Row="1" BackgroundColor="White" HorizontalOptions="CenterAndExpand" 
+              VerticalOptions="CenterAndExpand">
+            <ImageButton x:Name="imgBtn00" Aspect="Fill" Clicked="imgBtn00_Clicked" Grid.Row="0" Grid.Column="0" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn01" Aspect="Fill" Clicked="imgBtn01_Clicked" Grid.Row="0" Grid.Column="1" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn02" Aspect="Fill" Clicked="imgBtn02_Clicked" Grid.Row="0" Grid.Column="2" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn10" Aspect="Fill" Clicked="imgBtn10_Clicked" Grid.Row="1" Grid.Column="0" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn11" Aspect="Fill" Clicked="imgBtn11_Clicked" Grid.Row="1" Grid.Column="1" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn12" Aspect="Fill" Clicked="imgBtn12_Clicked" Grid.Row="1" Grid.Column="2" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn20" Aspect="Fill" Clicked="imgBtn20_Clicked" Grid.Row="2" Grid.Column="0" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn21" Aspect="Fill" Clicked="imgBtn21_Clicked" Grid.Row="2" Grid.Column="1" BackgroundColor="Transparent"></ImageButton>
+            <ImageButton x:Name="imgBtn22" Aspect="Fill" Clicked="imgBtn22_Clicked" Grid.Row="2" Grid.Column="2" BackgroundColor="Transparent"></ImageButton>
+        </Grid>
+        <Label 
+            x:Name="lblMsg"
+			Text="Keep Calm and Play !!"
+			TextColor="White"
+			FontSize="20" 
+			FontAttributes="Bold"  
+			HorizontalOptions="CenterAndExpand" 
+            Padding="20, 20, 20, 40"
+            Grid.Row="2"
+            />
+        <StackLayout Orientation="Horizontal" Grid.Row="3" 
+            >
+            <Label x:Name="lblPointO" TextColor="White"
+            FontSize="20" 
+			BackgroundColor="#1dabf0" Text="Points for O : "
+            HorizontalOptions="CenterAndExpand" 
+                   Padding="40, 0, 40, 0"
+            ></Label>
+            <Label x:Name="lblPointX" TextColor="White"
+            FontSize="20" 
+			BackgroundColor="#1dabf0" Text="Points for X : " 
+            HorizontalOptions="CenterAndExpand"
+                   Padding="40, 0, 40, 0"></Label>
+        </StackLayout>
+        <Button 
+            x:Name="btnReset"
+			Text="New Game" 
+			TextColor="White"
+            FontSize="20" 
+			BackgroundColor="#1dabf0" 
+            HorizontalOptions="CenterAndExpand" 
+            Padding="40, 20, 40, 20"
+            Grid.Row="4"
+            Clicked="btnReset_Clicked"/>
+    </Grid>
+</ContentPage>

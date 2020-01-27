@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HelloWorld.GreetPage">
+    <ContentPage.BackgroundColor>
+        <OnPlatform 
+            x:TypeArguments="Color"
+            Android="Gold"
+            iOS="LightBlue"
+            >
+        </OnPlatform>
+    </ContentPage.BackgroundColor>
+    <StackLayout 
+        BindingContext="{x:Reference sldvalue}" 
+        HorizontalOptions="Center" 
+        
+        >
+        <!--<Label x:Name="lblheader" 
+               Text="{
+                        Binding 
+                        Source={x:Reference sldvalue}, 
+                        Path=Value, 
+                        StringFormat='Value of Slider is {0:F2}' 
+                    }"
+               Opacity="{
+                        Binding 
+                        Source={x:Reference sldvalue}, 
+                        Path=Value
+                        }"
+               ></Label>-->
+        <BoxView 
+            Color="Green" 
+            Opacity="{Binding Value}"
+            ></BoxView>
+        <Label 
+            x:Name="lblheader"
+            Text="{
+                Binding Value,
+                StringFormat='Value is {0:F2}'
+                  }"
+            Opacity="{
+                Binding Value
+                    }"
+               ></Label>
+        <Slider 
+            x:Name="sldvalue" 
+            ValueChanged="Slider_ValueChanged"
+            ></Slider>
+        <Button 
+            Text="Click Me" 
+            Clicked="Button_Clicked"
+            ></Button>
+    </StackLayout>
+
+</ContentPage>

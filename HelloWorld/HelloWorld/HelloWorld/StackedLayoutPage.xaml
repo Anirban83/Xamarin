@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HelloWorld.StackedLayoutPage"
+             Padding="0, 20, 0, 0">
+    <ContentPage.Content>
+        <StackLayout 
+            BackgroundColor="IndianRed"
+            Orientation="Vertical"
+            Padding="40"
+            Spacing="20"
+            >
+            <Label Text="Lable 1" BackgroundColor="Snow" />
+            <Label Text="Lable 2" BackgroundColor="Snow" />
+            <Label Text="Lable 3" BackgroundColor="Snow" />
+            <StackLayout 
+            BackgroundColor="Tan"
+            Orientation="Horizontal"
+            VerticalOptions="EndAndExpand"
+            HorizontalOptions="Start"
+            >
+                <StackLayout>
+                    <Image Source="https://cdn2.iconfinder.com/data/icons/startup-butterscotch-vol-2/512/Startup_Rocket-512.png"
+                           HeightRequest="20"
+                           WidthRequest="20"
+                           ></Image>
+                    <Label Text="Lable 4" BackgroundColor="Fuchsia" />
+                </StackLayout>
+                <Label Text="Lable 5" BackgroundColor="Fuchsia" />
+                <Label Text="Lable 6" BackgroundColor="Fuchsia" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

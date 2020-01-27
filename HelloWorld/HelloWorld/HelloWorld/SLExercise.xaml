@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="HelloWorld.SLExercise">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="Stacked1" BackgroundColor="#127ac7">
+        <StackLayout VerticalOptions="Center" Spacing="20">
+            <Label 
+			Text="Welcome to Xamarin"
+			TextColor="White"
+			FontSize="30" 
+			FontAttributes="Bold"  
+			HorizontalOptions="Center" />
+            <Label 
+			Text="Cross-platform apps made easy" 
+			TextColor="White"
+			FontSize="18" 
+			HorizontalOptions="Center" />
+            <Button 
+			Text="Login" 
+			TextColor="White"
+			BackgroundColor="#1dabf0" />
+            <Button 
+			Text="Register" 
+			TextColor="White"
+			BackgroundColor="#1dabf0" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="Stacked2">
+        <ContentPage.Padding>
+            <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0">
+            </OnPlatform>
+        </ContentPage.Padding>
+        <StackLayout>
+            <StackLayout Padding="10">
+                <Label Text="nyc_photographer" />
+            </StackLayout>
+            <Image Source="http://lorempixel.com/1920/1080/nature/3/" />
+            <StackLayout Orientation="Horizontal" Spacing="20" Padding="10, 0">
+                <Button Text="Like" />
+                <Button Text="Comment" />
+                <Button Text="Share" />
+            </StackLayout>
+            <StackLayout Padding="10">
+                <BoxView HeightRequest="1" Color="#f0f0f0" />
+                <Label Text="700 likes" FontAttributes="Bold" />
+                <Label TextColor="#444" Text="This is a shot yesterday in Skanor, Sweden, when driving home, from a couple of days of work in Denmark." />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage>
+</TabbedPage>

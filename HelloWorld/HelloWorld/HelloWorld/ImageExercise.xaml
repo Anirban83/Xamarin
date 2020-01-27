@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:HelloWorld.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="HelloWorld.ImageExercise">
+    <!--Pages can be added as references or inline-->
+    <ContentPage Title="StackedImg">
+        <StackLayout>
+            <Image x:Name="imgTop" Source="https://www.surfertoday.com/images/stories/lighthouse.jpg" Aspect="AspectFill"></Image>
+            <Image x:Name="imgBottom"></Image>
+        </StackLayout>
+    </ContentPage>
+    <ContentPage Title="ActivityIndicator">
+        <AbsoluteLayout BackgroundColor="MintCream">
+            <ActivityIndicator 
+                AbsoluteLayout.LayoutBounds="0.5, 0.5, 100, 100" 
+                AbsoluteLayout.LayoutFlags="PositionProportional" 
+                IsRunning="{Binding Source={x:Reference imgBackground}, Path=IsLoading}"
+                Color="Indigo"
+                ></ActivityIndicator>
+            <Image x:Name="imgBackground" 
+                   Source="https://i.pinimg.com/originals/e1/7f/ba/e17fbac656d157c1ef86689b093ef558.jpg" 
+                   Aspect="AspectFill"
+                   AbsoluteLayout.LayoutBounds="0,0,1,1" 
+                   AbsoluteLayout.LayoutFlags="All" 
+                   ></Image>
+        </AbsoluteLayout>
+    </ContentPage>
+    <ContentPage Title="WitcherCorner">
+        <Grid>           
+            <Image x:Name="imgGrid00" Grid.Row="0" Grid.Column="0"></Image>
+            <Image x:Name="imgGrid01" Grid.Row="0" Grid.Column="1" Source="{local:EmbeddedImage HelloWorld.Images.Witcher2.jpg}"></Image>
+        </Grid>
+    </ContentPage>
+</TabbedPage>
